@@ -1,7 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+
+  // const [totalstudents, setTotalstudents] = useState(20)
+  const [data, setData] = useState([{}])
+
+  const addStudent = () => {
+    setData( student => [...student, {
+      Name : "Pjoy", 
+      RegNo : "202100151"
+    }]) 
+  }
+ 
+  useEffect(() => {
+    addStudent();
+    console.log(data);
+  }, [])
+
+  useEffect(() => {
+
+  }, data)
 
   return (
     <>
